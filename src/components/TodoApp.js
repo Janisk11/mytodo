@@ -18,7 +18,7 @@ const TodoApp = () => {
   return (
     <div className='todo-container'>
         <Box component='div' sx={{ width : '40%', m: 'auto', p: 10, border: '3px solid violet' }}>
-            <Typography variant='h5' sx={{color: 'blue', pb: 2}}>ToDo Application</Typography>
+            <Typography variant='h5' sx={{color: 'blue', pb: 2}}>To-Do List Application</Typography>
             <div id="todo-text">
                 <TextField value={userEnter} label="Enter Todo" variant="standard" onChange={(e) =>saveEnteredValue(e.target.value)} />
                 <Button variant='contained' color='secondary' onClick={saveTodo}>Submit</Button>
@@ -35,7 +35,7 @@ const TodoApp = () => {
                    </List>
                     <Button variant='contained' color='error' onClick={clearList}>Clear List</Button>
                 </div>
-                : <Typography variant='p'>Enter your todos and list them.</Typography>
+                : <Typography variant='p'>Create your daily To-Do list!!</Typography>
             }
             
         </Box>
