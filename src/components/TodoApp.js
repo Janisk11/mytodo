@@ -8,8 +8,12 @@ const TodoApp = () => {
         setuserEnter(value);
     }
     var saveTodo = () => {
-        settodolist(todolist => [...todolist, userEnter]);
-        setuserEnter('');
+        let uservalue = userEnter;
+        uservalue.trim();
+        if (uservalue !== '') {
+            settodolist(todolist => [...todolist, uservalue]);
+            setuserEnter('');
+        }
     }
     var clearList = () => {
         settodolist([]);
