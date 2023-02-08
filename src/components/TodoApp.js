@@ -31,8 +31,8 @@ const TodoApp = () => {
             {todolist.length > 0 ? 
                 <div id="todo-list">
                    <List>
-                        {todolist.map((data) => (
-                            <ListItem sx={{ display: 'list-item',listStyleType: 'decimal', textTransform: 'capitalize'}}>
+                        {todolist.map((data, i) => (
+                            <ListItem key={i} sx={{ display: 'list-item',listStyleType: 'decimal', textTransform: 'capitalize'}}>
                                 {data}
                             </ListItem>
                         ))}
@@ -41,7 +41,6 @@ const TodoApp = () => {
                 </div>
                 : <Typography variant='p'>Create your daily To-Do list!!</Typography>
             }
-            
         </Box>
     </div>
   )
