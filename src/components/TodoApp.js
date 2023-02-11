@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 const TodoApp = () => {
     var [userEnter, setuserEnter] = useState("");
     var [todolist, settodolist] = useState([]);
-    var saveEnteredValue = (value) =>{
-        setuserEnter(value);
+    var saveEnteredValue = (e) =>{
+        setuserEnter(e.target.value);
     }
     var saveTodo = () => {
         let uservalue = userEnter;
@@ -24,7 +24,7 @@ const TodoApp = () => {
         <Box component='div' sx={{ width : '40%', m: 'auto', p: 10, border: '3px solid violet' }}>
             <Typography variant='h5' sx={{color: 'blue', pb: 2}}>To-Do List Application</Typography>
             <div id="todo-text">
-                <TextField value={userEnter} label="Enter Todo" variant="standard" onChange={(e) =>saveEnteredValue(e.target.value)} />
+                <TextField value={userEnter} label="Enter Todo" variant="standard" onChange={saveEnteredValue} />
                 <Button variant='contained' color='secondary' onClick={saveTodo}>Submit</Button>
             </div>
           
